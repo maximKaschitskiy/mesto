@@ -1,0 +1,8 @@
+.elements__caption-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.elements__caption-link:visited {
+  color: #000000;
+}

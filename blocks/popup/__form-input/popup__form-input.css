@@ -1,0 +1,18 @@
+.popup__form-input {
+  max-width: 358px;
+  width: calc(12.5vw + 198px);
+  height: 27px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #000000;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  margin-top: 30px;
+}
+
+.popup__form-input:first-child {
+  margin-top: 54px;
+}

@@ -1,0 +1,17 @@
+.header__line-container {
+    margin-top: 41px;
+    display: block;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 321px) and (max-width: 598px) {
+	.header__line-container { 
+      margin-top: 31.6px;
+    }
+ }
+
+@media screen and (max-width: 320px) {
+	.header__line-container { 
+      margin-top: 31.6px;
+    }
+ }
