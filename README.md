@@ -14,6 +14,6 @@
 
 ## Где посмотреть?
 
-**По ссылке:** [клик!](https://maximkaschitskiy.github.io/russian-travel/)
+**По ссылке:** [клик!](https://maximkaschitskiy.github.io/mesto/)
 
 ***
