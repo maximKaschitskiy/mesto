@@ -1,5 +1,4 @@
 .popup__form-submit-button {
-  font-size: 0.8em;
   max-width: 358px;
   width: calc(12.5vw + 198px);
   height: 50px;
@@ -23,3 +22,10 @@
 .popup__form-submit-button:hover {
   opacity: 0.8;
 }
+
+@media only screen and (max-width: 320px) {
+	.popup__form-submit-button {
+      font-size: 14px;
+      line-height: 17px;
+    }
+ }

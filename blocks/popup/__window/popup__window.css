@@ -3,7 +3,6 @@
   max-width: 430px;
   height: 300px;
   position: fixed;
-  display: block;
   background-color: #FFFFFF;
   top: calc(7.5vw + 99px);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);

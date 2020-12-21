@@ -1,7 +1,6 @@
 .header__logo {
   margin-top: 45px;
   align-self: flex-start;
-  width: 25%;
   max-width: 142px;
   width: calc(3.98% + 90px);
   margin-left: 100px;
