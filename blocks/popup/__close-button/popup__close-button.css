@@ -1,8 +1,13 @@
 .popup__close-button {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  outline: 0;
   display: flex;
   z-index: 1;
   position: fixed;
-  top: calc(7.81vw + 65px);
+  top: calc(50vh - 180px);
   left: calc(62.39vw + 71px);
   max-width: 30px;
   min-width: 20px;
@@ -13,5 +18,11 @@
 }
 
 .popup__close-button:hover {
-  opacity: 0.8;
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 1280px) {
+    .popup__close-button {
+      left: calc(50vw + 235px);
+    }
 }

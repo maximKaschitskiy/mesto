@@ -1,8 +1,0 @@
-.popup__blackout {
-  background: black;
-  opacity: 0.5;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  position: fixed;
-}

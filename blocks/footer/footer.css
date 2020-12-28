@@ -6,11 +6,5 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 880px;
+  width: calc(62.29% + 82px);
 }
-
-@media only screen and (max-width: 320px) {
-	.footer{ width: 88.12%; }
- }
-@media only screen and (min-width: 321px) and (max-width: 1280px) {
-	.footer{ width: calc(62.29% + 82px); }
- }

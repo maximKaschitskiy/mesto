@@ -1,4 +1,8 @@
-.elements__like-button {
+.elements__like-button {  
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
   align-self: center;
   display: flex;
   background-image: url(../../../images/elements/Vector.svg);
