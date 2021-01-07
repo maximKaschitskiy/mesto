@@ -6,15 +6,13 @@
   outline: 0;
   display: flex;
   z-index: 1;
-  position: fixed;
-  top: calc(50vh - 180px);
-  left: calc(62.39vw + 71px);
   max-width: 30px;
   min-width: 20px;
   width: calc(1.04vw + 16px);
-  align-self: center;
+  align-self: flex-end;
   opacity: 1;
   transition: opacity 0s, opacity 0.15s linear;
+  margin-bottom: calc(-2.61vw + 33px);
 }
 
 .popup__close-button:hover {
@@ -23,6 +21,12 @@
 
 @media screen and (min-width: 1280px) {
     .popup__close-button {
-      left: calc(50vw + 235px);
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .popup__close-button {
+        margin-bottom: 25px;
     }
 }

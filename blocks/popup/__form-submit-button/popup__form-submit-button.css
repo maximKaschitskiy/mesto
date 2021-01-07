@@ -9,14 +9,14 @@
   color: #FFFFFF;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: calc(0.41vw + 12px);
   line-height: 22px;
   text-align: center;
   background-color: #000000;
-  margin-top: 48px;
+  margin-top: calc(0.31vw + 44px);
   opacity: 1;
   transition: opacity 0s, opacity 0.15s linear;
-  margin-bottom: 37px;
+  margin-bottom: calc(1.25vw + 21px);
 }
 
 .popup__form-submit-button:hover {
@@ -28,5 +28,15 @@
       font-size: 14px;
       line-height: 17px;
       margin-bottom: 25px;
+      margin-top: 45px;
+    }
+ }
+
+@media only screen and (min-width: 1280px) {
+	.popup__form-submit-button {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 37px;
+      margin-top: 48px;
     }
  }

@@ -23,10 +23,13 @@
 	.profile__edit-button { 
       margin-top: 30.25px;
       align-self: flex-start;
-      margin-left: 10px;
     }
  }
 
 .profile__edit-button:hover {
   opacity: 0.6;
+}
+
+.profile__edit-button:focus {
+  outline: 0;
 }

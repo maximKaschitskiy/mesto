@@ -9,18 +9,20 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 38vw;
+  max-width: 80%;
 }
 
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 1280px) {
 	.profile__name {
       font-size: 42px;
+      max-width: 85%;
     }
  }
 
-@media screen and (min-width: 599px) and (max-width: 1280px) {
+@media screen and (min-width: 599px) and (max-width: 1279px) {
 	.profile__name {
       font-size: calc(1.45vw + 22px);
+      max-width: 85%;
     }
  }
 
