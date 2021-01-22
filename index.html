@@ -12,30 +12,23 @@
         <img src="./images/header/header__logo.svg" class="header__logo" alt="Логотип Mesto Russia">
       </header>
       <main>
-      <section class="profile">
-        <img class="profile__avatar" src="./images/profile/image.png" alt="Картинка пользователя">
-        <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button" type="button">
-            <img class="profile__edit-button-pencil" src="images/profile/info/edit_button/Vector.svg" alt="Редактировать - иконка">
-          </button>
-          <p class="profile__status">Исследователь океана</p>
-        </div>
-        <button class="profile__add-button" type="button">
-          <img class="profile__add-button-symbol" src="images/profile/info/add_button/Vector.svg" alt="Редактировать - добавить">
-        </button>
-      </section>
-      <section class="elements">
-      </section>
+        <section class="profile">
+          <img class="profile__avatar" src="./images/profile/image.png" alt="Картинка пользователя">
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+            <p class="profile__status">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button" type="button"></button>
+        </section>
+        <section class="elements"></section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
-      <section class="popup popup__edit-profile">
-        <div class="popup__window popup__window-edit-profile">
-          <button class="popup__close-button popup__close-button-edit-profile" type="button">
-            <img src="./images/popup/Close%20Icon.svg" class="popup__close-icon" alt="Закрыть - иконка">
-          </button>
+      <section class="popup popup_state_edit-profile">
+        <div class="popup__window popup__window_state_edit-profile">
+          <button class="popup__close-button popup__close-button_state_edit-profile" type="button"></button>
           <form class="popup__form" name="popup">
             <h2 class="popup__form-title">Редактировать профиль</h2>
             <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_field_name" value='' required name="name">
@@ -44,11 +37,9 @@
           </form>
         </div>
       </section>
-      <section class="popup popup__add-place">
-        <div class="popup__window popup__window-add-place">
-          <button class="popup__close-button popup__close-button-add-place" type="button">
-            <img src="./images/popup/Close%20Icon.svg" class="popup__close-icon" alt="Закрыть - иконка">
-          </button>
+      <section class="popup popup_state_add-place">
+        <div class="popup__window popup__window_state_add-place">
+          <button class="popup__close-button popup__close-button_state_add-place" type="button"></button>
           <form class="popup__form" name="popup">
             <h2 class="popup__form-title">Новое место</h2>
             <input type="text" placeholder="Название" class="popup__form-input popup__form-input_field_place-name" value='' required name="place-name">
@@ -57,12 +48,10 @@
           </form>
         </div>
       </section>
-      <section class="popup popup__picture-full">
-        <div class="popup__window popup__window_window_image">
-          <button class="popup__close-button popup__close-button_window_image" type="button">
-            <img src="./images/popup/Close%20Icon.svg" class="popup__close-icon" alt="Закрыть - иконка">
-          </button>
-          <img class="popup__image" src="#">
+      <section class="popup popup_state_picture-full">
+        <div class="popup__window popup__window_state_picture-full">
+          <button class="popup__close-button popup__close-button_state_picture-full" type="button"></button>
+          <img class="popup__image" src="#" alt="#">
           <h2 class="popup__caption"></h2>
         </div>
       </section>

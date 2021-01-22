@@ -9,11 +9,16 @@
   max-width: 30px;
   min-width: 20px;
   width: calc(1.04vw + 16px);
+  height: calc(1.04vw + 16px);
   align-self: flex-end;
   opacity: 1;
   transition: opacity 0s, opacity 0.15s linear;
   margin-bottom: calc(-1.57% + 20px);
   position: relative;
+  background-image: url(../../../images/popup/Close%20Icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .popup__close-button:hover {

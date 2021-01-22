@@ -14,6 +14,10 @@
   margin-top: 0;
   opacity: 1;
   transition: opacity 0s, opacity 0.15s linear;
+  background-image: url(../../../images/profile/info/add_button/Vector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
 }
 
 @media screen and (max-width: 598px) {

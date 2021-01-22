@@ -1,24 +1,24 @@
 ////--попап место начало----
-let popupEditProfileContainer = document.querySelector('.popup__edit-profile'); //попап профиль
-let popupEditProfileForm = document.querySelector('.popup__window-edit-profile'); //попап профиль форма
+let popupEditProfileContainer = document.querySelector('.popup_state_edit-profile'); //попап профиль
+let popupEditProfileForm = document.querySelector('.popup__window_state_edit-profile'); //попап профиль форма
 let profileContainer = document.querySelector('.profile'); //профиль
 let openEditProfilePopupButton = profileContainer.querySelector('.profile__edit-button'); //кнопка открыть попап профиль
-let closeEditProfilePupupButton = popupEditProfileContainer.querySelector('.popup__close-button-edit-profile'); //кнопка закрыть попап профиль 
+let closeEditProfilePupupButton = popupEditProfileContainer.querySelector('.popup__close-button_state_edit-profile'); //кнопка закрыть попап профиль 
 let name = profileContainer.querySelector('.profile__name'); //профиль имя
 let status = profileContainer.querySelector('.profile__status'); //профиль статус
 let nameField = popupEditProfileContainer.querySelector('.popup__form-input_field_name'); //попап профиль поле имя
 let statusField = popupEditProfileContainer.querySelector('.popup__form-input_field_status'); //попап профиль поле статус
 
-let popupAddPlaceContainer = document.querySelector('.popup__add-place'); //попап место
-let popupAddPlaceForm = document.querySelector('.popup__window-add-place'); //попап место форма
+let popupAddPlaceContainer = document.querySelector('.popup_state_add-place'); //попап место
+let popupAddPlaceForm = document.querySelector('.popup__window_state_add-place'); //попап место форма
 let openAddPlacePopupButton = profileContainer.querySelector('.profile__add-button'); //кнопка открыть попап место
-let closeAddPlacePupupButton = popupAddPlaceContainer.querySelector('.popup__close-button-add-place'); //кнопка закрыть попап место
+let closeAddPlacePupupButton = popupAddPlaceContainer.querySelector('.popup__close-button_state_add-place'); //кнопка закрыть попап место
 let placeNameField = popupAddPlaceContainer.querySelector('.popup__form-input_field_place-name'); //попап место поле название
 let placeLinkField = popupAddPlaceContainer.querySelector('.popup__form-input_field_picture-link'); //попап место поле ссылка
 
-let popupFullImageContainer = document.querySelector('.popup__picture-full');
+let popupFullImageContainer = document.querySelector('.popup_state_picture-full');
 let popupFullImagePic = document.querySelector('.popup__image');
-let closeFullImagePupupButton = popupFullImageContainer.querySelector('.popup__close-button_window_image');
+let closeFullImagePupupButton = popupFullImageContainer.querySelector('.popup__close-button_state_picture-full');
 
 let popupFullImageCaption = document.querySelector('.popup__caption');
 
