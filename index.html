@@ -26,79 +26,59 @@
         </button>
       </section>
       <section class="elements">
-          <div class="elements__element">
-            <a href="#" class="elements__picture-link" target="_self">
-              <img class="elements__picture" src="./images/elements/kirill-pershin-1088404-unsplash.png" alt="Кирилл Першин - Сентинский храм">
-            </a>
-            <div class="elements__caption">
-              <h2 class="elements__caption-text">Карачаевск</h2>
-              <button class="elements__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <a href="#" class="elements__picture-link" target="_self">
-              <img class="elements__picture" src="./images/elements/kirill-pershin-1404681-unsplash.png" alt="Кирилл Першин - Эльбрус">
-            </a>
-            <div class="elements__caption">
-              <h2 class="elements__caption-text">Гора Эльбрус</h2>
-              <button class="elements__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <a href="#" class="elements__picture-link" target="_self">
-              <img class="elements__picture" src="./images/elements/kirill-pershin-1556355-unsplash.png" alt="Кирилл Першин - Домбай">
-            </a>
-            <div class="elements__caption">
-              <h2 class="elements__caption-text">Домбай</h2>
-              <button class="elements__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <a href="#" class="elements__picture-link" target="_self">
-              <img class="elements__picture" src="./images/elements/kirill-pershin-1404681-unsplash.png" alt="Кирилл Першин - Эльбрус">
-            </a>
-            <div class="elements__caption">
-              <h2 class="elements__caption-text">Гора Эльбрус</h2>
-              <button class="elements__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <a href="#" class="elements__picture-link" target="_self">
-              <img class="elements__picture" src="./images/elements/kirill-pershin-1556355-unsplash.png" alt="Кирилл Першин - Домбай">
-            </a>
-            <div class="elements__caption">
-              <h2 class="elements__caption-text">Домбай</h2>
-              <button class="elements__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <a href="#" class="elements__picture-link" target="_self">
-              <img class="elements__picture" src="./images/elements/kirill-pershin-1088404-unsplash.png" alt="Кирилл Першин - Сентинский храм">
-            </a>
-            <div class="elements__caption">
-              <h2 class="elements__caption-text">Карачаево-Черкесск</h2>
-              <button class="elements__like-button" type="button"></button>
-            </div>
-          </div>
-        </section>
+      </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
-      <section class="popup">
-        <div class="popup__window">
-          <button class="popup__close-button" type="button">
+      <section class="popup popup__edit-profile">
+        <div class="popup__window popup__window-edit-profile">
+          <button class="popup__close-button popup__close-button-edit-profile" type="button">
             <img src="./images/popup/Close%20Icon.svg" class="popup__close-icon" alt="Закрыть - иконка">
           </button>
           <form class="popup__form" name="popup">
             <h2 class="popup__form-title">Редактировать профиль</h2>
             <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_field_name" value='' required name="name">
             <input type="text" placeholder="Должность" class="popup__form-input popup__form-input_field_status" value='' required name="status">
-            <input type="submit" class="popup__form-submit-button" value="Сохранить">
+            <input type="submit" class="popup__form-submit-button popup__form-submit-button_form_profile" value="Сохранить">
           </form>
         </div>
       </section>
+      <section class="popup popup__add-place">
+        <div class="popup__window popup__window-add-place">
+          <button class="popup__close-button popup__close-button-add-place" type="button">
+            <img src="./images/popup/Close%20Icon.svg" class="popup__close-icon" alt="Закрыть - иконка">
+          </button>
+          <form class="popup__form" name="popup">
+            <h2 class="popup__form-title">Новое место</h2>
+            <input type="text" placeholder="Название" class="popup__form-input popup__form-input_field_place-name" value='' required name="place-name">
+            <input type="text" placeholder="Ссылка на картинку" class="popup__form-input popup__form-input_field_picture-link" value='' required name="picture-link">
+            <input type="submit" class="popup__form-submit-button popup__form-submit-button_form_add-place" value="Создать">
+          </form>
+        </div>
+      </section>
+      <section class="popup popup__picture-full">
+        <div class="popup__window popup__window_window_image">
+          <button class="popup__close-button popup__close-button_window_image" type="button">
+            <img src="./images/popup/Close%20Icon.svg" class="popup__close-icon" alt="Закрыть - иконка">
+          </button>
+          <img class="popup__image" src="">
+          <h2 class="popup__caption"></h2>
+        </div>
+      </section>
     </div>
+    <template id="elements-template">
+      <div class="elements__element">
+        <button class="elements__delete-button" type="button"></button>
+          <a href="#" class="elements__picture-link" target="_self">
+            <img class="elements__picture">
+          </a>
+        <div class="elements__caption">
+          <h2 class="elements__caption-text"></h2>
+          <button class="elements__like-button" type="button"></button>
+        </div>
+      </div>
+    </template>
     <script src="./script/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,15 @@
+.popup__close-button_window_image {
+  right: calc(-3.65vw + 11px);
+}
+
+@media screen and (min-width: 1280px) {
+    .popup__close-button_window_image {
+        right: -35px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .popup__close-button_window_image {
+        right: 0px;
+    }
+}

@@ -12,7 +12,8 @@
   align-self: flex-end;
   opacity: 1;
   transition: opacity 0s, opacity 0.15s linear;
-  margin-bottom: calc(-2.61vw + 33px);
+  margin-bottom: calc(-1.57% + 20px);
+  position: relative;
 }
 
 .popup__close-button:hover {
@@ -27,6 +28,6 @@
 
 @media screen and (max-width: 320px) {
     .popup__close-button {
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 }
