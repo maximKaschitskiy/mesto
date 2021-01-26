@@ -1,26 +1,26 @@
-////--попап место начало----
-let popupEditProfileContainer = document.querySelector('.popup_state_edit-profile'); //попап профиль
-let popupEditProfileForm = document.querySelector('.popup__window_state_edit-profile'); //попап профиль форма
-let profileContainer = document.querySelector('.profile'); //профиль
-let openEditProfilePopupButton = profileContainer.querySelector('.profile__edit-button'); //кнопка открыть попап профиль
-let closeEditProfilePupupButton = popupEditProfileContainer.querySelector('.popup__close-button_state_edit-profile'); //кнопка закрыть попап профиль 
-let name = profileContainer.querySelector('.profile__name'); //профиль имя
-let status = profileContainer.querySelector('.profile__status'); //профиль статус
-let nameField = popupEditProfileContainer.querySelector('.popup__form-input_field_name'); //попап профиль поле имя
-let statusField = popupEditProfileContainer.querySelector('.popup__form-input_field_status'); //попап профиль поле статус
+const popupEditProfileContainer = document.querySelector('.popup_state_edit-profile'); //попап профиль
+const popupEditProfileForm = document.querySelector('.popup__window_state_edit-profile'); //попап профиль форма
+const profileContainer = document.querySelector('.profile'); //профиль
+const openEditProfilePopupButton = profileContainer.querySelector('.profile__edit-button'); //кнопка открыть попап профиль
+const closeEditProfilePupupButton = popupEditProfileContainer.querySelector('.popup__close-button_state_edit-profile'); //кнопка закрыть попап профиль 
+const profileNameElement = profileContainer.querySelector('.profile__name'); //профиль имя
+const profileStatusElement = profileContainer.querySelector('.profile__status'); //профиль статус
+const nameField = popupEditProfileContainer.querySelector('.popup__form-input_field_name'); //попап профиль поле имя
+const statusField = popupEditProfileContainer.querySelector('.popup__form-input_field_status'); //попап профиль поле статус
 
-let popupAddPlaceContainer = document.querySelector('.popup_state_add-place'); //попап место
-let popupAddPlaceForm = document.querySelector('.popup__window_state_add-place'); //попап место форма
-let openAddPlacePopupButton = profileContainer.querySelector('.profile__add-button'); //кнопка открыть попап место
-let closeAddPlacePupupButton = popupAddPlaceContainer.querySelector('.popup__close-button_state_add-place'); //кнопка закрыть попап место
-let placeNameField = popupAddPlaceContainer.querySelector('.popup__form-input_field_place-name'); //попап место поле название
-let placeLinkField = popupAddPlaceContainer.querySelector('.popup__form-input_field_picture-link'); //попап место поле ссылка
+const popupAddPlaceContainer = document.querySelector('.popup_state_add-place'); //попап место
+const popupAddPlaceForm = document.querySelector('.popup__window_state_add-place'); //попап место форма
+const openAddPlacePopupButton = profileContainer.querySelector('.profile__add-button'); //кнопка открыть попап место
+const closeAddPlacePupupButton = popupAddPlaceContainer.querySelector('.popup__close-button_state_add-place'); //кнопка закрыть попап место
+const placeNameField = popupAddPlaceContainer.querySelector('.popup__form-input_field_place-name'); //попап место поле название
+const placeLinkField = popupAddPlaceContainer.querySelector('.popup__form-input_field_picture-link'); //попап место поле ссылка
 
-let popupFullImageContainer = document.querySelector('.popup_state_picture-full');
-let popupFullImagePic = document.querySelector('.popup__image');
-let closeFullImagePupupButton = popupFullImageContainer.querySelector('.popup__close-button_state_picture-full');
+const popupFullImageContainer = document.querySelector('.popup_state_picture-full');
+const popupFullImagePic = document.querySelector('.popup__image');
+const closeFullImagePupupButton = popupFullImageContainer.querySelector('.popup__close-button_state_picture-full');
 
-let popupFullImageCaption = document.querySelector('.popup__caption');
+const popupFullImageCaption = document.querySelector('.popup__caption');
+
 
 function closePopup(popupContainer) { //попап закрыть
     popupContainer.classList.remove('popup_active');
@@ -30,37 +30,28 @@ function openPopup(popupContainer) { //попап открыть
     popupContainer.classList.add('popup_active');
   }
 
-function popupProfileGetValues () { //отобразить текущее имя в форме
-    nameField.value = name.textContent;
-    statusField.value = status.textContent;
+function getPopupProfileValues () { //отобразить текущее имя в форме
+    nameField.value = profileNameElement.textContent;
+    statusField.value = profileStatusElement.textContent;
 }
 
 function submitEditProfileForm(evt) { //отправить форму профиль
      evt.preventDefault();
-     name.textContent = nameField.value; 
-     status.textContent = statusField.value; 
+     profileNameElement.textContent = nameField.value; 
+     profileStatusElement.textContent = statusField.value; 
      closePopup(popupEditProfileContainer);
   }
 
 function submitAddPlaceForm(evt) { //отправить форму место
      evt.preventDefault();
-     const userCard = [
-       {
-         name: placeNameField.value,
-         link: placeLinkField.value
-       }
-     ];
-     userCard.forEach((item) => {
-       addElement(item);
-     });
-     placeNameField.value = '';
-     placeLinkField.value = '';
+     addElement({ name: placeNameField.value, link: placeLinkField.value });
+     evt.target.reset();
      closePopup(popupAddPlaceContainer);
   }
 
 openEditProfilePopupButton.addEventListener('click', function() { //вызов кнопка профиль попап открыть
     openPopup(popupEditProfileContainer);
-    popupProfileGetValues();
+    getPopupProfileValues();
   });
 
 closeEditProfilePupupButton.addEventListener('click', function() { // вызов кнопка профиль попап закрыть
@@ -69,7 +60,6 @@ closeEditProfilePupupButton.addEventListener('click', function() { // вызов
 
 openAddPlacePopupButton.addEventListener('click', function() { //вызов кнопка место попап открыть
     openPopup(popupAddPlaceContainer);
-    popupProfileGetValues();
   });
 
 closeAddPlacePupupButton.addEventListener('click', function() { // вызов кнопка место попап закрыть
@@ -85,41 +75,14 @@ popupEditProfileForm.addEventListener('submit', submitEditProfileForm); //выз
 popupAddPlaceForm.addEventListener('submit', submitAddPlaceForm); //вызов кнопка отправить форму
 
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-
 function addElement(item) {
       const elementTemplate = document.querySelector('#elements-template').content;
       const elementContainer = document.querySelector('.elements');
       const likeButton = document.querySelector('.elements__like-button');
       const userElements = elementTemplate.cloneNode(true);
-      userElements.querySelector('.elements__picture').src=item.link;
-      userElements.querySelector('.elements__caption-text').textContent=item.name;
+      userElements.querySelector('.elements__picture').src = item.link;
+      userElements.querySelector('.elements__caption-text').textContent = item.name;
+      userElements.querySelector('.elements__picture').alt = item.name;
       elementContainer.prepend(userElements);
       elementContainer.querySelector('.elements__delete-button').addEventListener('click', deleteItem);
       elementContainer.querySelector('.elements__picture').addEventListener('click', openImage);
@@ -140,6 +103,7 @@ function openImage(evt) {
   const eventOpenImage = evt.target;
   openPopup(popupFullImageContainer);
   popupFullImagePic.src = eventOpenImage.src;
+  popupFullImagePic.alt = eventOpenImage.alt;
   const parent = eventOpenImage.closest('div');
   const title = parent.querySelector('h2').textContent;
   popupFullImageCaption.textContent = title;
