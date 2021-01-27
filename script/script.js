@@ -21,6 +21,8 @@ const closeFullImagePupupButton = popupFullImageContainer.querySelector('.popup_
 
 const popupFullImageCaption = document.querySelector('.popup__caption');
 
+const elementContainer = document.querySelector('.elements'); //секция в майн
+const elementTemplate = document.querySelector('#elements-template').content; //темплэйт контейнер
 
 function closePopup(popupContainer) { //попап закрыть
     popupContainer.classList.remove('popup_active');
@@ -74,24 +76,25 @@ popupEditProfileForm.addEventListener('submit', submitEditProfileForm); //выз
 
 popupAddPlaceForm.addEventListener('submit', submitAddPlaceForm); //вызов кнопка отправить форму
 
+function createElement(item) {
+    const userElement = elementTemplate.cloneNode(true); //тэмплейт
+    const userElementPicture = userElement.querySelector('.elements__picture');
+    userElementPicture.src = item.link;
+    userElementPicture.alt = item.name;
+    userElement.querySelector('.elements__caption-text').textContent = item.name;
+    userElement.querySelector('.elements__delete-button').addEventListener('click', deleteItem);
+    userElementPicture.addEventListener('click', openImage);
+    userElement.querySelector('.elements__like-button').addEventListener('click', likePhoto);
+    return userElement;
+}
 
 function addElement(item) {
-      const elementTemplate = document.querySelector('#elements-template').content;
-      const elementContainer = document.querySelector('.elements');
-      const likeButton = document.querySelector('.elements__like-button');
-      const userElements = elementTemplate.cloneNode(true);
-      userElements.querySelector('.elements__picture').src = item.link;
-      userElements.querySelector('.elements__caption-text').textContent = item.name;
-      userElements.querySelector('.elements__picture').alt = item.name;
-      elementContainer.prepend(userElements);
-      elementContainer.querySelector('.elements__delete-button').addEventListener('click', deleteItem);
-      elementContainer.querySelector('.elements__picture').addEventListener('click', openImage);
-      elementContainer.querySelector('.elements__like-button').addEventListener('click', likePhoto);
-  }
+    elementContainer.prepend(createElement(item));
+}
 
 function addDefaultElements() {
   initialCards.forEach((item) => {
-    addElement(item);
+      addElement(item);
   });
 }
 
@@ -104,14 +107,14 @@ function openImage(evt) {
   openPopup(popupFullImageContainer);
   popupFullImagePic.src = eventOpenImage.src;
   popupFullImagePic.alt = eventOpenImage.alt;
-  const parent = eventOpenImage.closest('div');
-  const title = parent.querySelector('h2').textContent;
+  const parent = eventOpenImage.closest('.elements__element');
+  const title = parent.querySelector('.elements__caption-text').textContent;
   popupFullImageCaption.textContent = title;
 }
 
 function likePhoto(evt) {
   const eventLike = evt.target;
-  eventLike.classList.toggle('elements__like-button_heart_active');
+  eventLike.classList.toggle('elements__like-button_active');
 }
 
 addDefaultElements();
