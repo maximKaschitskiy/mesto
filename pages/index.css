@@ -38,5 +38,5 @@
 @import url(../blocks/popup/__form-input/popup__form-input.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__caption/popup__caption.css);
-@import url(../blocks/popup/_state/_picture-full/popup_state_picture-full.css);
+@import url(../blocks/popup/_state/popup_state_picture-full.css);
 @import url(../blocks/popup/_active/popup_active.css);
