@@ -24,6 +24,15 @@ const popupFullImageCaption = document.querySelector('.popup__caption');
 const elementContainer = document.querySelector('.elements'); //секция в майн
 const elementTemplate = document.querySelector('#elements-template').content; //темплэйт контейнер
 
+const formAll = document.querySelectorAll('.popup__form-input');//все формы
+
+
+
+
+function resetErrorMessage(errorElement) {
+    errorElement.textContent = '';
+}
+
 function closePopup(popupContainer) { //попап закрыть
     popupContainer.classList.remove('popup_active');
   }
@@ -40,13 +49,51 @@ function getPopupProfileValues () { //отобразить текущее имя
 function submitEditProfileForm(evt) { //отправить форму профиль
      evt.preventDefault();
      profileNameElement.textContent = nameField.value; 
-     profileStatusElement.textContent = statusField.value; 
-     closePopup(popupEditProfileContainer);
+     profileStatusElement.textContent = statusField.value;
+     formAll.forEach((input) => { //валидировать!!!
+       function setErrorMessage(errorElement) {
+         switch(input.name) {
+           case 'name':
+             errorElement.textContent = "Неправильное имя";
+           break;
+           case 'status':
+             errorElement.textContent = "Неправильный статус";
+           break;
+           case 'place-name':
+             errorElement.textContent = "Неправильное имя места";
+           break;
+           case 'picture-link':
+             errorElement.textContent = "Неправильная ссылка";
+           break;
+         }
+       }
+       function isValid(input) {
+         switch(input.name) {
+           case 'name':
+             return input.checkValidity();
+           case 'status':
+             return input.checkValidity();
+           case 'place-name':
+             return input.checkValidity();
+           case 'picture-link':
+             return input.checkValidity();
+         }
+       }
+       const errorTextElement = document.querySelector(`.popup__form-error-text_message_${input.name}`); //сообщения об ошибке
+       resetErrorMessage(errorTextElement);
+       if (!isValid(input)) {
+         setErrorMessage(errorTextElement);
+       }
+    });
+//     closePopup(popupEditProfileContainer);
   }
 
 function submitAddPlaceForm(evt) { //отправить форму место
      evt.preventDefault();
      addElement({ name: placeNameField.value, link: placeLinkField.value });
+     formAll.forEach((input) => {  //валидировать
+       validate(input);
+     });
      evt.target.reset();
      closePopup(popupAddPlaceContainer);
   }

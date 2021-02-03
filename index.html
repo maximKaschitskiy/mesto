@@ -29,12 +29,12 @@
       <section class="popup popup_state_edit-profile">
         <div class="popup__window popup__window_state_edit-profile">
           <button class="popup__close-button popup__close-button_state_edit-profile" type="button"></button>
-          <form class="popup__form" name="popup__form_state_edit-profile">
+          <form class="popup__form" name="popup__form_state_edit-profile" novalidate>
             <h2 class="popup__form-title">Редактировать профиль</h2>
             <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_field_name" value='' required name="name">
-            <span class="popup__form-error-text"></span>
+            <span class="popup__form-error-text popup__form-error-text_message_name"></span>
             <input type="text" placeholder="Должность" class="popup__form-input popup__form-input_field_status" value='' required name="status">
-            <span class="popup__form-error-text"></span>
+            <span class="popup__form-error-text popup__form-error-text_message_status"></span>
             <input type="submit" class="popup__form-submit-button popup__form-submit-button_form_profile" value="Сохранить">
           </form>
         </div>
@@ -42,12 +42,12 @@
       <section class="popup popup_state_add-place">
         <div class="popup__window popup__window_state_add-place">
           <button class="popup__close-button popup__close-button_state_add-place" type="button"></button>
-          <form class="popup__form" name="popup_state_add-place">
+          <form class="popup__form" name="popup_state_add-place" novalidate>
             <h2 class="popup__form-title">Новое место</h2>
             <input type="text" placeholder="Название" class="popup__form-input popup__form-input_field_place-name" value='' required name="place-name">
-            <span class="popup__form-error-text"></span>
+            <span class="popup__form-error-text popup__form-error-text_message_place-name"></span>
             <input type="text" placeholder="Ссылка на картинку" class="popup__form-input popup__form-input_field_picture-link" value='' required name="picture-link">
-            <span class="popup__form-error-text"></span>
+            <span class="popup__form-error-text popup__form-error-text_message_picture-link"></span>
             <input type="submit" class="popup__form-submit-button popup__form-submit-button_form_add-place" value="Создать">
           </form>
         </div>
