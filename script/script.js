@@ -24,14 +24,7 @@ const popupFullImageCaption = document.querySelector('.popup__caption');
 const elementContainer = document.querySelector('.elements'); //секция в майн
 const elementTemplate = document.querySelector('#elements-template').content; //темплэйт контейнер
 
-const formAll = document.querySelectorAll('.popup__form-input');  //все формы
-//!!!!!!!!!!!!!!!!!!!добавить кнопки сабмита!!!
-const closeEditProfilePupupButton = popupEditProfileContainer.querySelector('.popup__close-button_state_edit-profile'); //кнопка закрыть попап профиль
-const closeAddPlacePupupButton = popupAddPlaceContainer.querySelector('.popup__close-button_state_add-place'); //кнопка закрыть попап место
 
-function resetErrorMessage(errorElement) {
-    errorElement.textContent = '';
-}
 
 function closePopup(popupContainer) { //попап закрыть
     popupContainer.classList.remove('popup_active');
@@ -48,56 +41,14 @@ function getPopupProfileValues () { //отобразить текущее имя
 
 function submitEditProfileForm(evt) { //отправить форму профиль
      evt.preventDefault();
-     function updateEditProfileForm() {
-       profileNameElement.textContent = nameField.value; 
-       profileStatusElement.textContent = statusField.value;
-       closePopup(popupEditProfileContainer);
-     }
-     formAll.forEach((input) => { //валидировать проверить ошибки
-       function setErrorMessage(errorElement) {
-         switch(input.name) {
-           case 'name':
-             errorElement.textContent = "Неправильное имя";
-           break;
-           case 'status':
-             errorElement.textContent = "Неправильный статус";
-           break;
-           case 'place-name':
-             errorElement.textContent = "Неправильное имя места";
-           break;
-           case 'picture-link':
-             errorElement.textContent = "Неправильная ссылка";
-           break;
-         }
-       }
-       function isValid(input) {
-         switch(input.name) {
-           case 'name':
-             return input.checkValidity();
-           case 'status':
-             return input.checkValidity();
-           case 'place-name':
-             return input.checkValidity();
-           case 'picture-link':
-             return input.checkValidity();
-         }
-       }
-       const errorTextElement = document.querySelector(`.popup__form-error-text_message_${input.name}`); //сообщения об ошибке
-       resetErrorMessage(errorTextElement);
-       if (!isValid(input)) {
-         setErrorMessage(errorTextElement);
-     } else {
-         updateEditProfileForm();
-       }
-     });
+     profileNameElement.textContent = nameField.value; 
+     profileStatusElement.textContent = statusField.value;
+     closePopup(popupEditProfileContainer);
    }
 
 function submitAddPlaceForm(evt) { //отправить форму место
      evt.preventDefault();
      addElement({ name: placeNameField.value, link: placeLinkField.value });
-     formAll.forEach((input) => {  //валидировать
-       validate(input);
-     });
      evt.target.reset();
      closePopup(popupAddPlaceContainer);
   }
@@ -105,7 +56,7 @@ function submitAddPlaceForm(evt) { //отправить форму место
 openEditProfilePopupButton.addEventListener('click', function() { //вызов кнопка профиль попап открыть
     openPopup(popupEditProfileContainer);
     getPopupProfileValues();
-    listenFormElements();
+    enableValidation();
   });
 
 closeEditProfilePupupButton.addEventListener('click', function() { // вызов кнопка профиль попап закрыть
@@ -114,6 +65,7 @@ closeEditProfilePupupButton.addEventListener('click', function() { // вызов
 
 openAddPlacePopupButton.addEventListener('click', function() { //вызов кнопка место попап открыть
     openPopup(popupAddPlaceContainer);
+    enableValidation();
   });
 
 closeAddPlacePupupButton.addEventListener('click', function() { // вызов кнопка место попап закрыть
@@ -168,19 +120,5 @@ function likePhoto(evt) {
   const eventLike = evt.target;
   eventLike.classList.toggle('elements__like-button_active');
 }
-
-function listenFormElements() { //назначить слушатель на все инпуты
-  formAll.forEach((item) => {
-      item.addEventListener('input', function (evt) {
-        console.log(evt.target.validity.valid);
-    }); 
-  });
-}
-
-function disableButton(button) { //засерить кнопку
-    button.setAttribute('disabled', 'disabled');
-}
-//добавть фунциию засеривания!!!!!!!!!!!!!
-disableButton('')
 
 addDefaultElements();

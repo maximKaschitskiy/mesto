@@ -23,6 +23,10 @@
   opacity: 0.8;
 }
 
+.popup__form-submit-button:disabled {
+  background: #bb0000;
+}
+
 @media only screen and (max-width: 320px) {
 	.popup__form-submit-button {
       font-size: 14px;
