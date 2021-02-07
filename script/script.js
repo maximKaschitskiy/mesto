@@ -30,11 +30,13 @@ const elementTemplate = document.querySelector('#elements-template').content; //
 function closePopup(popupContainer) { //попап закрыть
     controlOverlay();
     popupContainer.classList.remove('popup_active');
+    removeKeyDownListener();
   }
 
 function openPopup(popupContainer) { //попап открыть
     controlOverlay();
     popupContainer.classList.add('popup_active');
+    setKeyDownListener();
   }
 
 function getPopupProfileValues () { //отобразить текущее имя в форме
@@ -131,5 +133,19 @@ function likePhoto(evt) {
 function controlOverlay() {
   popupOverlay.classList.toggle('popup-overlay_active');
 }
+
+function setKeyDownListener() {
+  document.addEventListener('keydown', handleEscButton);
+}
+
+function removeKeyDownListener() {
+  document.removeEventListener('keydown', handleEscButton);
+}
+
+function handleEscButton(event) {
+    if (event.code === 'Escape') {
+      closePopup(document.querySelector('.popup_active'));
+    }
+  }
 
 addDefaultElements();
