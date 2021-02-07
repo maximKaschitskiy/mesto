@@ -15,6 +15,8 @@ const closeAddPlacePupupButton = popupAddPlaceContainer.querySelector('.popup__c
 const placeNameField = popupAddPlaceContainer.querySelector('.popup__form-input_field_place-name'); //попап место поле название
 const placeLinkField = popupAddPlaceContainer.querySelector('.popup__form-input_field_picture-link'); //попап место поле ссылка
 
+const popupOverlay = document.querySelector('.popup-overlay');
+
 const popupFullImageContainer = document.querySelector('.popup_state_picture-full');
 const popupFullImagePic = document.querySelector('.popup__image');
 const closeFullImagePupupButton = popupFullImageContainer.querySelector('.popup__close-button_state_picture-full');
@@ -25,12 +27,13 @@ const elementContainer = document.querySelector('.elements'); //секция в 
 const elementTemplate = document.querySelector('#elements-template').content; //темплэйт контейнер
 
 
-
 function closePopup(popupContainer) { //попап закрыть
+    controlOverlay();
     popupContainer.classList.remove('popup_active');
   }
 
 function openPopup(popupContainer) { //попап открыть
+    controlOverlay();
     popupContainer.classList.add('popup_active');
   }
 
@@ -76,6 +79,10 @@ closeFullImagePupupButton.addEventListener('click', function() { // вызов �
     closePopup(popupFullImageContainer);
   });
 
+popupOverlay.addEventListener('click', function() { // оверлэй попап закрыть
+    closePopup(document.querySelector('.popup_active'));
+  });
+
 popupEditProfileForm.addEventListener('submit', submitEditProfileForm); //вызов кнопка  отправить форму
 
 popupAddPlaceForm.addEventListener('submit', submitAddPlaceForm); //вызов кнопка отправить форму
@@ -119,6 +126,10 @@ function openImage(evt) {
 function likePhoto(evt) {
   const eventLike = evt.target;
   eventLike.classList.toggle('elements__like-button_active');
+}
+
+function controlOverlay() {
+  popupOverlay.classList.toggle('popup-overlay_active');
 }
 
 addDefaultElements();

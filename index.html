@@ -26,23 +26,18 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
+      <section class="popup-overlay"></section>
       <section class="popup popup_state_edit-profile">
         <div class="popup__window popup__window_state_edit-profile">
           <button class="popup__close-button popup__close-button_state_edit-profile" type="button"></button>
           <form class="popup__form" name="popup__form_state_edit-profile" novalidate>
             <h2 class="popup__form-title">Редактировать профиль</h2>
             <fieldset class="popup__form-fieldset">
-              <label>
-                <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_field_name" value='' name="name" id="name-field" required>
-                <span class="popup__form-error-text popup__form-error-text_message_name name-field-error"></span>
-              </label>
-              <label>
-                <input type="text" placeholder="Должность" class="popup__form-input popup__form-input_field_status" value='' name="status" id="status-field" required>
-                <span class="popup__form-error-text popup__form-error-text_message_status status-field-error"></span>
-              </label>
-              <label>
-                <input type="submit" class="popup__form-submit-button popup__form-submit-button_form_profile" value="Сохранить">
-              </label>
+              <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_field_name" value="" name="name" id="name-field" required minlength="2" maxlength="40">
+              <span class="popup__form-error-text popup__form-error-text_message_name name-field-error"></span>
+              <input type="text" placeholder="Должность" class="popup__form-input popup__form-input_field_status" value="" name="status" id="status-field" required minlength="2" maxlength="200">
+              <span class="popup__form-error-text popup__form-error-text_message_status status-field-error"></span>
+              <input type="submit" class="popup__form-submit-button popup__form-submit-button_form_profile" value="Сохранить">
             </fieldset>
           </form>
         </div>
@@ -53,17 +48,11 @@
           <form class="popup__form" name="popup_state_add-place" novalidate>
             <h2 class="popup__form-title">Новое место</h2>
             <fieldset class="popup__form-fieldset">
-              <label>
-                <input type="text" placeholder="Название" class="popup__form-input popup__form-input_field_place-name" value='' name="place-name" id="place-name-field" required>
-                <span class="popup__form-error-text popup__form-error-text_message_place-name place-name-field-error"></span>
-              </label>
-              <label>
-                <input type="text" placeholder="Ссылка на картинку" class="popup__form-input popup__form-input_field_picture-link" value='' name="picture-link" id="picture-link-field" required>
-                <span class="popup__form-error-text popup__form-error-text_message_picture-link picture-link-field-error"></span>
-              </label>
-              <label>
-                <input type="submit" class="popup__form-submit-button popup__form-submit-button_form_add-place" value="Создать">
-              </label>
+              <input type="text" placeholder="Название" class="popup__form-input popup__form-input_field_place-name" value="" name="place-name" id="place-name-field" required minlength="2" maxlength="30">
+              <span class="popup__form-error-text popup__form-error-text_message_place-name place-name-field-error"></span>
+              <input type="url" placeholder="Ссылка на картинку" class="popup__form-input popup__form-input_field_picture-link" value="" name="picture-link" id="picture-link-field" required>
+              <span class="popup__form-error-text popup__form-error-text_message_picture-link picture-link-field-error"></span>
+              <input type="submit" class="popup__form-submit-button popup__form-submit-button_form_add-place" value="Создать">
             </fieldset>
           </form>
         </div>

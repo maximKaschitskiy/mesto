@@ -63,25 +63,23 @@
 
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-//  inputElement.classList.add('form__input_type_error'); //добавить стиль текст ошибки
+  inputElement.classList.add('popup__form-input_validation_error'); //добавить стиль ошибка поля
   errorElement.textContent = errorMessage;
-//  errorElement.classList.add('form__input-error_active'); //добавить стиль ошибка поля
+//errorElement.classList.add(''); //добавить стиль текст ошибки 
 };
 
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-//  inputElement.classList.remove('form__input_type_error'); //убрать стиль ошибка поля
-//  errorElement.classList.remove('form__input-error_active'); //убрать стиль текст ошибки
+  inputElement.classList.remove('popup__form-input_validation_error'); //убрать стиль ошибка поля
+//errorElement.classList.remove('form__input-error_active'); //убрать стиль текст ошибки
   errorElement.textContent = '';
 };
 
 const checkInputValidity = (formElement, inputElement) => {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage);
-    console.log('invalid');
   } else {
     hideInputError(formElement, inputElement);
-    console.log('valid');
   }
 };
 

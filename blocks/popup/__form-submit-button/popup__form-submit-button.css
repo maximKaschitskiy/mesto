@@ -17,6 +17,8 @@
   opacity: 1;
   transition: opacity 0s, opacity 0.15s linear;
   margin-bottom: calc(1.25vw + 21px);
+  box-sizing: border-box;
+  padding: 0;
 }
 
 .popup__form-submit-button:hover {
@@ -24,7 +26,10 @@
 }
 
 .popup__form-submit-button:disabled {
-  background: #bb0000;
+  border: 1px solid #000000;
+  color: #000000;
+  border-radius: 2px;
+  background-color: transparent;
 }
 
 @media only screen and (max-width: 320px) {
