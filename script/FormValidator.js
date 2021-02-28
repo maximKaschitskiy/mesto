@@ -108,7 +108,4 @@ class FormValidator {
     };
 };
 
-const validateEditProfileForm = new FormValidator(formSelectorsObj, formSelectorsObj.editProfileFormSelector);
-const validateAddPlaceForm = new FormValidator(formSelectorsObj, formSelectorsObj.addPlaceFormSelector);
-
-export {validateEditProfileForm, validateAddPlaceForm};
+export {FormValidator, formSelectorsObj};

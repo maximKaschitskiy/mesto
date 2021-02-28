@@ -1,37 +1,12 @@
 const elementContainer = document.querySelector('.elements'); //секция в майн
 const elementTemplate = document.querySelector('#elements-template').content; //темплэйт контейнер
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+const popupFullImagePic = document.querySelector('.popup__image');
 
 class Card {
   constructor(data) {
       this._name = data.name;
       this._link = data.link;
+      this._fullImage = popupFullImagePic;
   }
 
   _getTemplate() {
@@ -82,4 +57,4 @@ class Card {
   }
 }
 
-export {initialCards, Card};
+export {Card};
