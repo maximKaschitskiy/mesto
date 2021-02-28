@@ -6,7 +6,7 @@
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css">
   </head>
-  <body>
+  <body class="main">
     <div class="page">
       <header class="header">
         <img src="./images/header/header__logo.svg" class="header__logo" alt="Логотип Mesto Russia">
@@ -30,7 +30,7 @@
       <section class="popup popup_state_edit-profile">
         <div class="popup__window popup__window_state_edit-profile">
           <button class="popup__close-button popup__close-button_state_edit-profile" type="button"></button>
-          <form class="popup__form" name="popup__form_state_edit-profile" novalidate>
+          <form class="popup__form popup__form_state_edit-profile" name="popup__form_state_edit-profile" novalidate>
             <h2 class="popup__form-title">Редактировать профиль</h2>
             <fieldset class="popup__form-fieldset">
               <input type="text" placeholder="Имя" class="popup__form-input popup__form-input_field_name" value="" name="name" id="name-field" required minlength="2" maxlength="40">
@@ -45,7 +45,7 @@
       <section class="popup popup_state_add-place">
         <div class="popup__window popup__window_state_add-place">
           <button class="popup__close-button popup__close-button_state_add-place" type="button"></button>
-          <form class="popup__form" name="popup_state_add-place" novalidate>
+          <form class="popup__form popup__form_state_add-place" name="popup_state_add-place" novalidate>
             <h2 class="popup__form-title">Новое место</h2>
             <fieldset class="popup__form-fieldset">
               <input type="text" placeholder="Название" class="popup__form-input popup__form-input_field_place-name" value="" name="place-name" id="place-name-field" required minlength="2" maxlength="30">
@@ -77,8 +77,6 @@
         </div>
       </div>
     </template>
-    <script src="./script/initial-сards.js"></script>
-    <script src="./script/script.js"></script>
-    <script src="./script/validation.js"></script>
+    <script type="module" src="./script/script.js"></script>
   </body>
 </html>
