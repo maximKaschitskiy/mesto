@@ -1,12 +1,17 @@
 const elementContainer = document.querySelector('.elements'); //секция в майн
 const elementTemplate = document.querySelector('#elements-template').content; //темплэйт контейнер
+const popupFullImageContainer = document.querySelector('.popup_state_picture-full');
 const popupFullImagePic = document.querySelector('.popup__image');
+const popupFullImageCaption = document.querySelector('.popup__caption');
+
 
 class Card {
   constructor(data) {
       this._name = data.name;
       this._link = data.link;
-      this._fullImage = popupFullImagePic;
+      this._fullImageContainer = popupFullImageContainer;
+      this._fullImagePic = popupFullImagePic;
+      this._fullImageCaption = popupFullImageCaption;
   }
 
   _getTemplate() {
@@ -38,18 +43,15 @@ class Card {
   }
 
   _handleOpenPhoto() {
-      this._popupFullImageContainer = document.querySelector('.popup_state_picture-full');
-      openPopup(this._popupFullImageContainer);
-      this._popupFullImagePic = document.querySelector('.popup__image');
-      this._popupFullImagePic.src = event.target.src;
-      this._popupFullImagePic.alt = event.target.alt;
-      this._popupFullImageCaption = document.querySelector('.popup__caption');
-      this._popupFullImageCaption.textContent = this._name;
+      openPopup(this._fullImageContainer);
+      this._fullImagePic.src = event.target.src;
+      this._fullImagePic.alt = event.target.alt;
+      this._fullImageCaption.textContent = this._name;
   }
 
   generateCard() {
       this._element = this._getTemplate();
-      this._setEventListeners(); // вызовите _setEventListeners
+      this._setEventListeners();
       this._element.querySelector('.elements__picture').src = this._link;
       this._element.querySelector('.elements__picture').alt = this._name;
       this._element.querySelector('.elements__caption-text').textContent = this._name;

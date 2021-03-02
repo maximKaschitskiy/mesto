@@ -1,6 +1,13 @@
-import {initialCards} from './constants.js';
-import {Card} from './Card.js';
-import {FormValidator, formSelectorsObj} from './FormValidator.js';
+import {
+    initialCards
+} from './constants.js';
+import {
+    Card
+} from './Card.js';
+import {
+    FormValidator,
+    formSelectorsObj
+} from './FormValidator.js';
 
 const validateEditProfileForm = new FormValidator(formSelectorsObj, formSelectorsObj.editProfileFormSelector);
 const validateAddPlaceForm = new FormValidator(formSelectorsObj, formSelectorsObj.addPlaceFormSelector);
@@ -63,10 +70,14 @@ function submitAddPlaceForm(evt) { //отправить форму место
         name: placeNameField.value,
         link: placeLinkField.value
     });
-    const cardElement = card.generateCard();
-    document.querySelector('.elements').prepend(cardElement);
+    addCard(card);
     evt.target.reset();
     closePopup(popupAddPlaceContainer);
+}
+
+function addCard(card) {
+    const cardElement = card.generateCard();
+    elementContainer.prepend(cardElement);
 }
 
 openEditProfilePopupButton.addEventListener('click', function () { //вызов кнопка профиль попап открыть
@@ -120,8 +131,11 @@ function handleEscButton(event) {
     }
 }
 
-initialCards.forEach((item) => {
-    const card = new Card(item);
-    const cardElement = card.generateCard();
-    elementContainer.prepend(cardElement);
-  });
+function addInitialCards() {
+    initialCards.forEach((item) => {
+        const card = new Card(item);
+        addCard(card);
+    });
+};
+
+addInitialCards();
