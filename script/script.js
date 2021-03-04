@@ -138,4 +138,6 @@ function addInitialCards() {
     });
 };
 
+export {openPopup};
+
 addInitialCards();

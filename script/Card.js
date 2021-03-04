@@ -1,3 +1,7 @@
+import {
+    openPopup
+} from './script.js';
+
 const elementContainer = document.querySelector('.elements'); //секция в майн
 const elementTemplate = document.querySelector('#elements-template').content; //темплэйт контейнер
 const popupFullImageContainer = document.querySelector('.popup_state_picture-full');
