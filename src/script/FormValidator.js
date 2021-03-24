@@ -108,4 +108,7 @@ class FormValidator {
     };
 };
 
-export {FormValidator, formSelectorsObj};
+export {
+    FormValidator,
+    formSelectorsObj
+};

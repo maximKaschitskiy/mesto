@@ -16,6 +16,7 @@
   height: 19.3px;
   opacity: 1;
   transition: opacity 0s, opacity 0.15s linear;
+  filter: drop-shadow(2px 2px 2px #222); 
 }
 
 .elements__delete-button:hover {
