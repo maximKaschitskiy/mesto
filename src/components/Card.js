@@ -1,5 +1,3 @@
-
-const elementContainer = document.querySelector('.elements'); //секция в майн
 const elementTemplate = document.querySelector('#elements-template').content; //темплэйт контейнер
 const popupFullImageContainer = document.querySelector('.popup_state_picture-full');
 const popupFullImagePic = document.querySelector('.popup__image');
@@ -21,8 +19,8 @@ class Card {
   }
 
   _setEventListeners() {
-      this._element.querySelector('.elements__picture').addEventListener('click', () => {
-        this._handleCardClick.open();
+      this._element.querySelector('.elements__picture').addEventListener('click', (event) => {
+        this._handleCardClick.open(event, this._fullImagePic, this._fullImageCaption);
       });
 
       this._element.querySelector('.elements__like-button').addEventListener('click', () => {
@@ -34,20 +32,13 @@ class Card {
       });
   }
 
-  _handleLikePhoto() {
+  _handleLikePhoto(event) {
       event.target.classList.toggle('elements__like-button_active');
   }
 
-  _handleDeletePhoto() {
+  _handleDeletePhoto(event) {
       event.target.closest('.elements__element').remove();
   }
-
-//   _handleOpenPhoto() {
-//       openPopup(this._fullImageContainer);
-//       this._fullImagePic.src = event.target.src;
-//       this._fullImagePic.alt = event.target.alt;
-//       this._fullImageCaption.textContent = this._name;
-//   }
 
   generateCard() {
       this._element = this._getTemplate();

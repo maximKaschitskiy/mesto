@@ -8,14 +8,12 @@ class PopupWithImage extends Popup {
     constructor(popupSelector) {
         super(popupSelector);
         this._fullImageContainer = popupFullImageContainer;
-        this._fullImagePic = popupFullImagePic;
-        this._fullImageCaption = popupFullImageCaption;
     }
-    open() {
+    open(event, fullImagePic, fullImageCaption) {
         super.open();
-        this._fullImagePic.src = event.target.src;
-        this._fullImagePic.alt = event.target.alt;
-        this._fullImageCaption.textContent = this._name;
+        fullImagePic.src = event.target.src;
+        fullImagePic.alt = event.target.alt;
+        fullImageCaption.textContent = this._name;
     }
 }
 

@@ -16,7 +16,7 @@ export default class Popup {
         this._controlOverlay();
         this.removeEventListeners();
     }
-    _handleEscClose() {
+    _handleEscClose(event) {
         if (event.code === 'Escape') {
             this.close();
         }
