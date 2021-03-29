@@ -1,19 +1,17 @@
 import Popup from './Popup.js';
 
-const popupFullImageContainer = document.querySelector('.popup_state_picture-full');
-const popupFullImagePic = document.querySelector('.popup__image');
-const popupFullImageCaption = document.querySelector('.popup__caption');
-
 class PopupWithImage extends Popup {
     constructor(popupSelector) {
         super(popupSelector);
-        this._fullImageContainer = popupFullImageContainer;
+        this._fullImageContainer = popupSelector;
+        this._popupFullImagePic = this._fullImageContainer.querySelector('.popup__image');
+        this._popupFullImageCaption = this._fullImageContainer.querySelector('.popup__caption'); 
     }
-    open(event, fullImagePic, fullImageCaption) {
+    open(event) {
         super.open();
-        fullImagePic.src = event.target.src;
-        fullImagePic.alt = event.target.alt;
-        fullImageCaption.textContent = this._name;
+        this._popupFullImagePic.src = event.target.src;
+        this._popupFullImagePic.alt = event.target.alt;
+        this._popupFullImageCaption.textContent = event.target.alt;
     }
 }
 

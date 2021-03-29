@@ -7,12 +7,12 @@ export default class Popup {
         this._handleEscClose = (this._handleEscClose).bind(this);
     }
     open() {
-        this._popupSelector.classList.toggle('popup_active');
+        this._popupSelector.classList.add('popup_active');
         this.setEventListeners();
         this._controlOverlay();
     }
     close() {
-        this._popupSelector.classList.toggle('popup_active');
+        this._popupSelector.classList.remove('popup_active');
         this._controlOverlay();
         this.removeEventListeners();
     }

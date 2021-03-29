@@ -5,11 +5,12 @@ class PopupWithForm extends Popup {
         super(popupSelector);
         this.popupSelector = popupSelector;
         this.formSubmitCallback = formSubmitCallback;
-        this._getInputValues = (this._getInputValues).bind(this);
         this._popupForm = popupSelector.querySelector('.popup__window');
         this._popupFields = popupSelector.querySelector('.popup__form');
         this._allFields = popupSelector.querySelectorAll('.popup__form-input');
         this._form = popupSelector.querySelector('.popup__form');
+        this._getInputValues = (this._getInputValues).bind(this);
+        this.buttonEventCallback = (this.buttonEventCallback).bind(this);
     }
     close() {
         super.close();
@@ -17,19 +18,29 @@ class PopupWithForm extends Popup {
     }
     setEventListeners() {
         super.setEventListeners();
-        this._popupForm.addEventListener('submit', this.formSubmitCallback); //вызов кнопка отправить форму
+        this._popupForm.addEventListener('submit', this.buttonEventCallback);
+    }
+    removeEventListeners() {
+        super.removeEventListeners();
+        this._popupForm.removeEventListener('submit', this.buttonEventCallback);
     }
     _getInputValues() {
         this._allValues = {};
         this._allFields.forEach(element => {
-            return this._allValues[`${element.name}`] = `${element.value}`;
+            return this._allValues[element.name] = element.value;
         });
         return this._allValues;
     }
-    _getDefaultValues(values) {
-        this._allFields[0].value = values.name;
-        this._allFields[1].value = values.status;
+    buttonEventCallback(event) {
+        event.preventDefault();
+        this.formSubmitCallback(this._getInputValues());
     }
-
+    setDefaultValues(values) {
+        const fieldsLength = Object.entries(this._allFields);
+        const valValues = Object.values(values)
+            for (let i = 0; i < fieldsLength.length; i++) {
+                this._allFields[i].value = valValues[i];
+            }
+    }
 }
 export default PopupWithForm;
